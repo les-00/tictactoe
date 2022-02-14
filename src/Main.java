@@ -17,7 +17,7 @@ public class Main extends Application{
 		// TODO Auto-generated method stub
 		Game_Gui game = new Game_Gui();
 		
-		Scene scene1 = new Scene(game, 570, 660);
+		Scene scene1 = new Scene(game, 570, 650);
 		
 		primaryStage.setScene(scene1);
 		primaryStage.setTitle("Tic-tac-toe");
