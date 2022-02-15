@@ -167,27 +167,32 @@ public class Game_Gui extends Pane {
 						txt_current.setText("");
 						txt_state.setText("Winner:\t" + game.getWinner());
 						
-						Button b1 = new Button("Play Again");
-						Button b2 = new Button("Quit game");
-						
-						HBox hb = new HBox(50,b1, b2);
-
 						++btnCounter;
-						b1.setOnMouseClicked(f ->
-						{
-							clearGameStage();
-							game.clearGame();
-							txt_state.setText("Current Player: ");
-							txt_current.setText("X");
-						});
-						b2.setOnMouseClicked(ff ->
-						{
-							System.exit(5);
-						});
 						
-						hb.setPadding(new Insets(25));
+						if(btnCounter == 1)
+						{
+							Button b1 = new Button("Play Again");
+							Button b2 = new Button("Quit game");
+							
+							HBox hb = new HBox(50,b1, b2);
+
+							b1.setOnMouseClicked(f ->
+							{
+								clearGameStage();
+								game.clearGame();
+								txt_state.setText("Current Player: ");
+								txt_current.setText("X");
+							});
+							b2.setOnMouseClicked(ff ->
+							{
+								System.exit(5);
+							});
+							
+							hb.setPadding(new Insets(25));
+							
+							gameRoot.getChildren().add(hb);
+						}
 						
-						gameRoot.getChildren().add(hb);
 						
 						return;
 					}
@@ -204,21 +209,25 @@ public class Game_Gui extends Pane {
 						HBox hb = new HBox(50,b1, b2);
 
 						++btnCounter;
-						b1.setOnMouseClicked(f ->
-						{
-							clearGameStage();
-							game.clearGame();
-							txt_state.setText("Current Player: ");
-							txt_current.setText("X");
-						});
-						b2.setOnMouseClicked(ff ->
-						{
-							System.exit(5);
-						});
 						
-						hb.setPadding(new Insets(25));
-						
-						gameRoot.getChildren().add(hb);
+						if(btnCounter == 1)
+						{
+							b1.setOnMouseClicked(f ->
+							{
+								clearGameStage();
+								game.clearGame();
+								txt_state.setText("Current Player: ");
+								txt_current.setText("X");
+							});
+							b2.setOnMouseClicked(ff ->
+							{
+								System.exit(5);
+							});
+							
+							hb.setPadding(new Insets(25));
+							
+							gameRoot.getChildren().add(hb);
+						}
 						
 					}
 					
